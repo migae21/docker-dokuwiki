@@ -8,6 +8,8 @@ with some improvements:
   * It adds php7-openssl an his depencys to ssl-download plugins within the image (https://github.com/Simon-L/docker-dokuwiki)
   * It creates a volume "lib/plugins" for easy add|remove|backup plugins
   * It creates a volume "var/dokuwiki-backup" witch contains a week of daily Backups per cron
+  * Adding timezone support 
+    Change the ENV TIMEZONE=Europe/Vienna in the Dockerfile to your needs
 
 Build the image
 

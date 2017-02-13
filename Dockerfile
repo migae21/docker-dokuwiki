@@ -3,9 +3,10 @@ LABEL maintainer mig@aon.at
 
 ENV DOKUWIKI_VERSION 2016-06-26a
 ENV MD5_CHECKSUM 9b9ad79421a1bdad9c133e859140f3f2
+ENV TIMEZONE Europe/Vienna
 
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ add \
-libressl2.4-libssl && \
+libressl2.4-libssl tzdata && \
 apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
 php7 php7-fpm php7-gd php7-session php7-zlib php7-openssl php7-xml nginx supervisor curl tar
 
@@ -45,6 +46,7 @@ sed -i -e "s|listen\s*=\s*127\.0\.0\.1:9000|listen = /var/run/php-fpm7.sock|g" /
 sed -i -e "s|;listen\.owner\s*=\s*|listen.owner = |g" /etc/php7/php-fpm.d/www.conf && \
 sed -i -e "s|;listen\.group\s*=\s*|listen.group = |g" /etc/php7/php-fpm.d/www.conf && \
 sed -i -e "s|;listen\.mode\s*=\s*|listen.mode = |g" /etc/php7/php-fpm.d/www.conf && \
+cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime && \
 chmod +x /start.sh && \
 chmod +x /etc/periodic/daily/backup.sh
 
