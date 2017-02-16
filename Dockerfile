@@ -38,7 +38,7 @@ ln -s /var/dokuwiki-storage/conf /var/www/conf
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD supervisord.conf /etc/supervisord.conf
 ADD start.sh /start.sh
-ADD backup.sh /etc/periodic/daily/backup.sh
+ADD backup /etc/periodic/daily/backup
 
 RUN echo "cgi.fix_pathinfo = 0;" >> /etc/php7/php-fpm.ini && \
 sed -i -e "s|;daemonize\s*=\s*yes|daemonize = no|g" /etc/php7/php-fpm.conf && \
