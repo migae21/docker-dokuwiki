@@ -1,8 +1,8 @@
 FROM alpine:3.4
 LABEL maintainer mig@aon.at
 
-ENV DOKUWIKI_VERSION 2016-06-26a
-ENV MD5_CHECKSUM 9b9ad79421a1bdad9c133e859140f3f2
+ENV DOKUWIKI_VERSION 2017-02-19a
+ENV MD5_CHECKSUM 78e8c27291fbc3de04c7f107c3f7725a
 ENV TIMEZONE Europe/Vienna
 
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ add \

@@ -10,6 +10,7 @@ with some improvements:
   * It creates a volume "var/dokuwiki-backup" witch contains a week of daily Backups per cron
   * Adding timezone support 
     Change the ENV TIMEZONE=Europe/Vienna in the Dockerfile to your needs
+  * Adding ntpd support via supervisor
 
 Build the image
 
