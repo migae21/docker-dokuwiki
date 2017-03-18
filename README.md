@@ -1,7 +1,8 @@
 # docker-dokuwiki
 A doker image providing dokwiki with focus of backup in the container 
 
-This project based on the work of http://fast.jumpingcrab.com/wp/blog/2017/02/06/docker-eine-praktische-einfuehrung-am-beispiel-dokuwiki/
+This project based on the work of https://github.com/istepanov/docker-dokuwiki
+also look at http://fast.jumpingcrab.com/wp/blog/2017/02/06/docker-eine-praktische-einfuehrung-am-beispiel-dokuwiki/
 
 
 with some improvements:
