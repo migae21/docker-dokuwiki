@@ -1,13 +1,13 @@
-FROM alpine:3.4
+FROM alpine:3.5
 LABEL maintainer mig@aon.at
 
-ENV DOKUWIKI_VERSION 2017-02-19a
-ENV MD5_CHECKSUM 78e8c27291fbc3de04c7f107c3f7725a
+ENV DOKUWIKI_VERSION 2017-02-19b
+ENV MD5_CHECKSUM ea11e4046319710a2bc6fdf58b5cda86
 ENV TIMEZONE Europe/Vienna
 
-RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main/ add \
+RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.5/main/ add \
 libressl2.4-libssl tzdata && \
-apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/ add \
+apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.5/community/ add \
 php7 php7-fpm php7-gd php7-session php7-zlib php7-openssl php7-xml nginx supervisor curl tar
 
 RUN mkdir -p /run/nginx && \
