@@ -21,7 +21,7 @@ Build the image
 
   * git clone https://github.com/migae21/docker-dokuwiki
   * docker build . -t dokuwiki
-  * docker run -d -p 8100:80 --name dokuwiki dokuwiki
+  * docker run -d -p 80:80 --name dokuwiki dokuwiki
 
 Upgrade from old Versions
 ```
@@ -42,10 +42,10 @@ docker rm dokuwiki
 #checkout the new version from my github-repo and build it
 git checkout https://github.com/migae21/docker-dokuwiki
 cd docker-dokuwiki
-docker build . -t dokuwiki:2.0
+docker build . -t dokuwiki
 
 #launch the service
-docker run -d -p 80:80 --name dokuwiki dokuwiki:2.0
+docker run -d -p 80:80 --name dokuwiki dokuwiki
 
 #restore the backup replace $DAY with the weekday of the backup
 docker cp $DAY.tgz dokuwiki:/var/dokuwiki-backup/
