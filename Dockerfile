@@ -39,6 +39,7 @@ ADD nginx.conf /etc/nginx/nginx.conf
 ADD supervisord.conf /etc/supervisord.conf
 ADD start.sh /start.sh
 ADD backup /etc/periodic/daily/backup
+ADD uploads.ini /etc/php7/conf.d/uploads.ini
 
 RUN echo "cgi.fix_pathinfo = 0;" >> /etc/php7/php-fpm.ini && \
 sed -i -e "s|;daemonize\s*=\s*yes|daemonize = no|g" /etc/php7/php-fpm.conf && \
