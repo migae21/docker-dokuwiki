@@ -27,6 +27,12 @@ Build the image
   * docker build . -t dokuwiki
   * docker run -d -p 80:80 --name dokuwiki dokuwiki
 
+Configure dokuwiki
+
+  * http://localshost:80/install.php
+    or if your not on the dockerhost
+  * http://dockerhost:80/install.php
+
 Upgrade from old Versions
 ```
 #validate and save the backups
