@@ -1,8 +1,8 @@
 FROM alpine:3.5
 LABEL maintainer mig@aon.at
 
-ENV DOKUWIKI_VERSION 2017-02-19b
-ENV MD5_CHECKSUM ea11e4046319710a2bc6fdf58b5cda86
+ENV DOKUWIKI_VERSION 2017-02-19e
+ENV MD5_CHECKSUM 09bf175f28d6e7ff2c2e3be60be8c65f
 ENV TIMEZONE Europe/Vienna
 
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.5/main/ add \
@@ -32,8 +32,9 @@ ln -s /var/dokuwiki-storage/data/media_meta /var/www/data/media_meta && \
 mv /var/www/data/attic /var/dokuwiki-storage/data/attic && \
 ln -s /var/dokuwiki-storage/data/attic /var/www/data/attic && \
 mv /var/www/conf /var/dokuwiki-storage/conf && \
-ln -s /var/dokuwiki-storage/conf /var/www/conf  
-
+ln -s /var/dokuwiki-storage/conf /var/www/conf && \
+mv /var/www/lib/tpl /var/dokuwiki-storage/tpl && \
+ln -s /var/dokuwiki-storage/tpl /var/www/lib/tpl
 
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD supervisord.conf /etc/supervisord.conf
