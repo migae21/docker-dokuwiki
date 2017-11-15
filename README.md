@@ -1,5 +1,5 @@
 # docker-dokuwiki
-A doker image providing dokwiki with focus of backup in the container 
+A doker image providing dokuwiki with focus of backup in the container 
 
 This project source is https://github.com/migae21/docker-dokuwiki
 
