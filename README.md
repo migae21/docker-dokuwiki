@@ -1,9 +1,10 @@
 # docker-dokuwiki
 A doker image providing dokwiki with focus of backup in the container 
 
-This project based on the work of https://github.com/istepanov/docker-dokuwiki
-also look at http://fast.jumpingcrab.com/wp/blog/2017/02/06/docker-eine-praktische-einfuehrung-am-beispiel-dokuwiki/
+This project source is https://github.com/migae21/docker-dokuwiki
 
+This project based on the work of https://github.com/istepanov/docker-dokuwiki also look at 
+also look at http://fast.jumpingcrab.com/wp/blog/2017/02/06/docker-eine-praktische-einfuehrung-am-beispiel-dokuwiki/
 
 with some improvements:
   * It will check the md5sum of the dokuwiki download.
@@ -13,8 +14,6 @@ with some improvements:
   * Adding timezone support \
     Change the ENV TIMEZONE=Europe/Vienna in the Dockerfile to your needs
   * Adding ntpd support via supervisor
-  * ~~Upgrade to the latest (Bugfix) Release 2017-02-19a “Frusterick Manners”~~
-  * ~~Upgrade to the latest (Bugfix) Release 2017-02-19b “Frusterick Manners”~~
   * Upgrade to the latest (Bugfix) Release 2017-02-19e “Frusterick Manners”
   * Upgrade Alpine Linux to latest stable version v3.5
   * (NEW) php upload limit set to 64MB \
@@ -29,7 +28,7 @@ Build the image
 
 Configure dokuwiki
 
-  * http://localshost:80/install.php
+  * http://localhost:80/install.php
     or if your not on the dockerhost
   * http://dockerhost:80/install.php
 
