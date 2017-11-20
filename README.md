@@ -15,16 +15,27 @@ with some improvements:
     Change the ENV TIMEZONE=Europe/Vienna in the Dockerfile to your needs
   * Adding ntpd support via supervisor
   * Upgrade to the latest (Bugfix) Release 2017-02-19e “Frusterick Manners”
-  * Upgrade Alpine Linux to latest stable version v3.5
+  * Upgrade Alpine Linux to latest stable version v3.6
   * (NEW) php upload limit set to 64MB \
     Change the value to your needs in the file upload.ini
   * Fix the templates: create a new symlink to /var/www/lib/tpl  THX to https://github.com/mavx14/
 
-Build the image
+Download the Image und run the Container dirctly from Docker Hub or Cloud
+
+  docker run -d -p 80:80 --name dokuwiki migae21/dokuwiki:latest
+  # If you want any other Timezone than EUROPE/VIENNA use th -e paramater
+  # i.e. for Londeon use -e Europe/London listening on Port 8000 type
+  * docker run -d -p 8000:80 --name dokuwiki migae21/dokuwiki:latest
+
+
+Build the image form th GITHUB sources
 
   * git clone https://github.com/migae21/docker-dokuwiki
   * docker build . -t dokuwiki
   * docker run -d -p 80:80 --name dokuwiki dokuwiki
+  # If you want any other Timezone than EUROPE/VIENNA use th -e paramater
+  # i.e. for Londeon use -e Europe/London listening on Port 8000 type
+  * docker run -d -p 8000:80 -e Europe/London --name dokuwiki dokuwiki 
 
 Configure dokuwiki
 
