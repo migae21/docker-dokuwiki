@@ -23,8 +23,8 @@ with some improvements:
 Download the Image und run the Container dirctly from Docker Hub or Cloud
 
   docker run -d -p 80:80 --name dokuwiki migae21/dokuwiki:latest
-  # If you want any other Timezone than EUROPE/VIENNA use th -e paramater
-  # i.e. for Londeon use -e Europe/London listening on Port 8000 type
+  * # If you want any other Timezone than EUROPE/VIENNA use th -e paramater
+  * # i.e. for Londeon use -e Europe/London listening on Port 8000 type
   * docker run -d -p 8000:80 --name dokuwiki migae21/dokuwiki:latest
 
 
@@ -33,8 +33,8 @@ Build the image form th GITHUB sources
   * git clone https://github.com/migae21/docker-dokuwiki
   * docker build . -t dokuwiki
   * docker run -d -p 80:80 --name dokuwiki dokuwiki
-  # If you want any other Timezone than EUROPE/VIENNA use th -e paramater
-  # i.e. for Londeon use -e Europe/London listening on Port 8000 type
+  * # If you want any other Timezone than EUROPE/VIENNA use th -e paramater
+  * # i.e. for Londeon use -e Europe/London listening on Port 8000 type
   * docker run -d -p 8000:80 -e Europe/London --name dokuwiki dokuwiki 
 
 Configure dokuwiki
