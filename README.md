@@ -15,10 +15,11 @@ with some improvements:
     Change the ENV TIMEZONE=Europe/Vienna in the Dockerfile to your needs
   * Adding ntpd support via supervisor
   * Upgrade to the latest (Bugfix) Release 2017-02-19e “Frusterick Manners”
-  * Upgrade Alpine Linux to latest stable version v3.6
+  * Upgrade Alpine Linux to latest stable version v3.7
   * (NEW) php upload limit set to 64MB \
     Change the value to your needs in the file upload.ini
   * Fix the templates: create a new symlink to /var/www/lib/tpl  THX to https://github.com/mavx14/
+  * Add a periodic backup of plugins in the folder "/var/dokuwiki-backup" for easy going back if you change pluguins
 
 Download the Image und run the Container dirctly from Docker Hub or Cloud
 

@@ -1,13 +1,13 @@
-FROM alpine:3.6
+FROM alpine:3.7
 LABEL maintainer mig@aon.at
 
 ENV DOKUWIKI_VERSION 2017-02-19e
 ENV MD5_CHECKSUM 09bf175f28d6e7ff2c2e3be60be8c65f
 ENV TIMEZONE Europe/Vienna
 
-RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.6/main/ add \
-libressl2.5-libssl tzdata && \
-apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.6/community/ add \
+RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/main/ add \
+libressl2.6-libssl tzdata && \
+apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/community/ add \
 php7 php7-fpm php7-gd php7-session php7-zlib php7-openssl php7-xml nginx supervisor curl tar
 
 RUN mkdir -p /run/nginx && \
@@ -40,6 +40,7 @@ ADD nginx.conf /etc/nginx/nginx.conf
 ADD supervisord.conf /etc/supervisord.conf
 ADD start.sh /start.sh
 ADD backup /etc/periodic/daily/backup
+ADD backup-plugins /etc/periodic/daily/backup-plugins
 ADD uploads.ini /etc/php7/conf.d/uploads.ini
 
 RUN echo "cgi.fix_pathinfo = 0;" >> /etc/php7/php-fpm.ini && \
