@@ -19,7 +19,8 @@ with some improvements:
   * (NEW) php upload limit set to 64MB \
     Change the value to your needs in the file upload.ini
   * Fix the templates: create a new symlink to /var/www/lib/tpl  THX to https://github.com/mavx14/
-  * Add a periodic backup of plugins in the folder "/var/dokuwiki-backup" for easy going back if you change pluguins
+  * Add a periodic backup of plugins in the folder "/var/dokuwiki-backup" for easy going back if you change plugins
+  * Fix upload bug (permission /var/tmp/nginx)
 
 Download the Image und run the Container dirctly from Docker Hub or Cloud
 

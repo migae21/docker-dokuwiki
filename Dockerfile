@@ -50,6 +50,7 @@ sed -i -e "s|;listen\.owner\s*=\s*|listen.owner = |g" /etc/php7/php-fpm.d/www.co
 sed -i -e "s|;listen\.group\s*=\s*|listen.group = |g" /etc/php7/php-fpm.d/www.conf && \
 sed -i -e "s|;listen\.mode\s*=\s*|listen.mode = |g" /etc/php7/php-fpm.d/www.conf && \
 cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime && \
+chown nobody:nobody /var/tmp/nginx && \
 chmod +x /start.sh && \
 chmod +x /etc/periodic/daily/backup && \
 chmod +x /etc/periodic/daily/backup-plugins
