@@ -8,7 +8,7 @@ ENV TIMEZONE Europe/Vienna
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/main/ add \
 libressl2.6-libssl tzdata && \
 apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/community/ add \
-php7 php7-fpm php7-gd php7-session php7-zlib php7-openssl php7-xml nginx supervisor curl tar
+php7 php7-fpm php7-gd php7-session php7-zlib php7-openssl php7-xml php7-json nginx supervisor curl tar
 
 RUN mkdir -p /run/nginx && \
 mkdir -p /var/www /var/dokuwiki-storage/data && \
