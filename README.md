@@ -14,7 +14,7 @@ with some improvements:
   * Adding timezone support \
     Change the ENV TIMEZONE=Europe/Vienna in the Dockerfile to your needs
   * Adding ntpd support via supervisor
-  * Upgrade to the latest (Bugfix) Release 2017-02-19e “Frusterick Manners”
+  * Upgrade to the latest (Bugfix) Release 2018-04-22 “Greebo”
   * Upgrade Alpine Linux to latest stable version v3.7
   * (NEW) php upload limit set to 64MB \
     Change the value to your needs in the file upload.ini

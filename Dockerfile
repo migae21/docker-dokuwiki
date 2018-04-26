@@ -1,8 +1,8 @@
 FROM alpine:3.7
 LABEL maintainer mig@aon.at
 
-ENV DOKUWIKI_VERSION 2017-02-19e
-ENV MD5_CHECKSUM 09bf175f28d6e7ff2c2e3be60be8c65f
+ENV DOKUWIKI_VERSION 2018-04-22
+ENV MD5_CHECKSUM cec26670452f0122807d4f812432df4d
 ENV TIMEZONE Europe/Vienna
 
 RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.7/main/ add \
