@@ -1,5 +1,6 @@
-# docker-dokuwiki
-A doker image providing dokuwiki with focus of backup in the container 
+# docker-dokuwiki Release 2018-04-22 "Greebo"
+
+A doker image providing dokuwiki with focus of backup in the container,  
 
 This project source is https://github.com/migae21/docker-dokuwiki
 
@@ -22,8 +23,12 @@ with some improvements:
   * Add a periodic backup of plugins in the folder "/var/dokuwiki-backup" for easy going back if you change plugins
   * Fix upload bug (permission /var/tmp/nginx)
   * Fix the client intended to send too large body nginx error
+  * Add new php7-packages: php7-json (needed for the new release) php7-iconv (needed for the Tagcloud plugin)
  
-Download the Image und run the Container dirctly from Docker Hub or Cloud
+##Download the Image und run the Container directly from Docker Hub or Cloud
+
+https://cloud.docker.com/swarm/migae21/repository/docker/migae21/dokuwiki/general
+https://hub.docker.com/r/migae21/dokuwiki/
 
   docker run -d -p 80:80 --name dokuwiki migae21/dokuwiki:latest
   * #If you want any other Timezone than EUROPE/VIENNA use th -e paramater
