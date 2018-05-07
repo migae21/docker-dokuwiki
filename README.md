@@ -1,4 +1,4 @@
-# docker-dokuwiki Release 2018-04-22 "Greebo"
+# docker-dokuwiki Release 2018-04-22a "Greebo"
 
 A doker image providing dokuwiki with focus of backup in the container,  
 
@@ -77,12 +77,17 @@ docker build . -t dokuwiki
 docker run -d -p 80:80 --name dokuwiki dokuwiki
 
 #restore the backup replace $DAY with the weekday of the backup
-docker cp $DAY.tgz dokuwiki:/var/dokuwiki-backup/
+docker cp dokuwiki-backup dokuwiki:/var/dokuwiki-backup/
 
-#exec a shell from the container
+#exec a shell from the container to restor the files
 docker exec -ti dokuwiki /bin/sh
 cd /
-tar xzvf /var/dokuwiki-backup/Wednesday.tgz
+#restor the site-data
+tar xzvf /var/dokuwiki-backup/Wednesday.tgz  ## Enter the proper Day of Week
+#restore the plugins dont forget to update Plugins via dokuwiki admin panel (after a release Upgrade)
+tar xzvf /var/dokuwiki-backup/iplugins_Wednesday.tgz  ## Enter the proper Day of Week
+
+
 #finish, launch and test dokuwiki
 
 ```
