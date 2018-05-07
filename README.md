@@ -15,7 +15,7 @@ with some improvements:
   * Adding timezone support \
     Change the ENV TIMEZONE=Europe/Vienna in the Dockerfile to your needs
   * Adding ntpd support via supervisor
-  * Upgrade to the latest (Bugfix) Release 2018-04-22 “Greebo”
+  * Upgrade to the latest (Bugfix) Release 2018-04-22a “Greebo”
   * Upgrade Alpine Linux to latest stable version v3.7
   * (NEW) php upload limit set to 64MB \
     Change the value to your needs in the file upload.ini
@@ -24,6 +24,7 @@ with some improvements:
   * Fix upload bug (permission /var/tmp/nginx)
   * Fix the client intended to send too large body nginx error
   * Add new php7-packages: php7-json (needed for the new release) php7-iconv (needed for the Tagcloud plugin)
+  * Fix startup of ntpd and crond via supervisor, added autorestart optoins to all services
  
 ##Download the Image und run the Container directly from Docker Hub or Cloud
 
