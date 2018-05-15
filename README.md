@@ -1,5 +1,11 @@
 # docker-dokuwiki Release 2018-04-22a "Greebo"
 
+##For use with cloud-plgin refer to docker-dokuwiki-utc this is a buil of 2018-04-22 (without a)
+##This is in my github-repo and
+##https://hub.docker.com/r/migae21/dokuwiki_automatedbuild/
+##https://cloud.docker.com/swarm/migae21/repository/docker/migae21/dokuwiki_automatedbuild/general
+
+
 A doker image providing dokuwiki with focus of backup in the container,  
 
 This project source is https://github.com/migae21/docker-dokuwiki
