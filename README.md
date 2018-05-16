@@ -1,6 +1,6 @@
 # docker-dokuwiki Release 2018-04-22a "Greebo"
 
-##For use with cloud-plgin refer to docker-dokuwiki-utc this is a buil of 2018-04-22 (without a)\
+##For use with the cloud-plugin refer to docker-dokuwiki-utc this is a build of 2018-04-22 (without a)\
 ##This is in my github-repo and the corespending docker builds ar under\
 ##https://hub.docker.com/r/migae21/dokuwiki_automatedbuild/
 ##https://cloud.docker.com/swarm/migae21/repository/docker/migae21/dokuwiki_automatedbuild/general
