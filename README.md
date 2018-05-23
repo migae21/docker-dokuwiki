@@ -1,11 +1,5 @@
 # docker-dokuwiki Release 2018-04-22a "Greebo"
 
-##For use with the cloud-plugin refer to docker-dokuwiki-utc this is a build of 2018-04-22 (without a)\
-##This is in my github-repo and the corespending docker builds ar under\
-##https://hub.docker.com/r/migae21/dokuwiki_automatedbuild/
-##https://cloud.docker.com/swarm/migae21/repository/docker/migae21/dokuwiki_automatedbuild/general
-
-
 A doker image providing dokuwiki with focus of backup in the container,  
 
 This project source is https://github.com/migae21/docker-dokuwiki
@@ -89,12 +83,14 @@ docker cp dokuwiki-backup dokuwiki:/var/dokuwiki-backup/
 docker exec -ti dokuwiki /bin/sh
 cd /
 #restor the site-data
-tar xzvf /var/dokuwiki-backup/Wednesday.tgz  ## Enter the proper Day of Week
+tar xzvf /var/dokuwiki-backup/dokuwiki_backup/Wednesday.tgz  ## Enter the proper Day of Week
 #restore the plugins dont forget to update Plugins via dokuwiki admin panel (after a release Upgrade)
-tar xzvf /var/dokuwiki-backup/iplugins_Wednesday.tgz  ## Enter the proper Day of Week
+tar xzvf /var/dokuwiki-backup/dokuwiki-backup/plugins_Wednesday.tgz  ## Enter the proper Day of Week
 
+#After restoring the Backup you hav to stop and start the Container 
+#for the correct working of the Plugins (i.E. cloud-plugin)
 
-#finish, launch and test dokuwiki
+#finish
 
 ```
 
