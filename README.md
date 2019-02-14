@@ -50,7 +50,7 @@ Configure dokuwiki
 
   * http://localhost:80/install.php
     or if your not on the dockerhost
-  * http://dockerhost:80/install.php
+  * http://dockerhost:8000/install.php
 
 Upgrade from old Versions
 ```
