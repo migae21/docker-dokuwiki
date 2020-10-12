@@ -1,14 +1,14 @@
-FROM alpine:3.8
+FROM alpine:3.12
 LABEL maintainer mig@aon.at
 
-ENV DOKUWIKI_VERSION 2018-04-22b
-ENV MD5_CHECKSUM 605944ec47cd5f822456c54c124df255
+ENV DOKUWIKI_VERSION 2020-07-29 
+ENV MD5_CHECKSUM 8867b6a5d71ecb5203402fe5e8fa18c9
 ENV TIMEZONE Europe/Vienna
 
-RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.8/main/ add \
-libressl tzdata && \
-apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.8/community/ add \
-php7 php7-fpm php7-gd php7-session php7-zlib php7-openssl php7-xml php7-json php7-iconv nginx supervisor curl tar
+RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.12/main/ add \
+libressl tzdata libcrypto1.1 libssl1.1 && \
+apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.12/community/ add \
+php7 php7-fpm php7-gd php7-session php7-zlib php7-openssl php7-xml php7-json php7-iconv nginx supervisor curl tar 
 
 RUN mkdir -p /run/nginx && \
 mkdir -p /var/www /var/dokuwiki-storage/data && \
@@ -50,7 +50,6 @@ sed -i -e "s|;listen\.owner\s*=\s*|listen.owner = |g" /etc/php7/php-fpm.d/www.co
 sed -i -e "s|;listen\.group\s*=\s*|listen.group = |g" /etc/php7/php-fpm.d/www.conf && \
 sed -i -e "s|;listen\.mode\s*=\s*|listen.mode = |g" /etc/php7/php-fpm.d/www.conf && \
 cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime && \
-chown nobody:nobody /var/tmp/nginx && \
 chmod +x /start.sh && \
 chmod +x /etc/periodic/daily/backup && \
 chmod +x /etc/periodic/daily/backup-plugins
@@ -59,3 +58,4 @@ EXPOSE 80
 VOLUME /var/dokuwiki-storage  /var/www/lib/plugins  /var/dokuwiki-backup
 
 CMD /start.sh
+
