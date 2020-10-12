@@ -1,4 +1,4 @@
-# docker-dokuwiki Release 2018-04-22b "Greebo"
+# docker-dokuwiki Release 2020-07-29 "Hogfather"
 
 A doker image providing dokuwiki with focus of backup in the container,  
 
@@ -15,12 +15,13 @@ with some improvements:
   * Adding timezone support \
     Change the ENV TIMEZONE=Europe/Vienna in the Dockerfile to your needs
   * Adding ntpd support via supervisor
-  * Upgrade to the latest (Bugfix) Release 2018-04-22b “Greebo”
-  * Upgrade Alpine Linux to latest stable version v3.8
+  * Upgrade to the latest (Bugfix) Release 2020-07-29 “Hogfather”
+  * Upgrade Alpine Linux to latest stable version v3.12
   * (NEW) php upload limit set to 64MB \
     Change the value to your needs in the file upload.ini
   * Fix the templates: create a new symlink to /var/www/lib/tpl  THX to https://github.com/mavx14/
   * Add a periodic backup of plugins in the folder "/var/dokuwiki-backup" for easy going back if you change plugins
+  * !IMPortant pleas don use Backups of plugins during the upgrade from greebo to hogfather, please Install you plugins insiede of Dokuwiki manually!
   * Fix upload bug (permission /var/tmp/nginx)
   * Fix the client intended to send too large body nginx error
   * Add new php7-packages: php7-json (needed for the new release) php7-iconv (needed for the Tagcloud plugin)
