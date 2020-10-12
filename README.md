@@ -21,7 +21,7 @@ with some improvements:
     Change the value to your needs in the file upload.ini
   * Fix the templates: create a new symlink to /var/www/lib/tpl  THX to https://github.com/mavx14/
   * Add a periodic backup of plugins in the folder "/var/dokuwiki-backup" for easy going back if you change plugins
-  * !IMPortant pleas don use Backups of plugins during the upgrade from greebo to hogfather, please Install you plugins insiede of Dokuwiki manually!
+  * !Important pleas don use Backups of plugins during the upgrade from greebo to hogfather, please Install you plugins insiede of Dokuwiki manually!
   * Fix upload bug (permission /var/tmp/nginx)
   * Fix the client intended to send too large body nginx error
   * Add new php7-packages: php7-json (needed for the new release) php7-iconv (needed for the Tagcloud plugin)
