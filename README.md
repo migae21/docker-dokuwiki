@@ -29,7 +29,6 @@ with some improvements:
  
 ##Download the Image und run the Container directly from Docker Hub or Cloud
 
-https://cloud.docker.com/swarm/migae21/repository/docker/migae21/dokuwiki/general
 https://hub.docker.com/r/migae21/dokuwiki/
 
   docker run -d -p 80:80 --name dokuwiki migae21/dokuwiki:latest
