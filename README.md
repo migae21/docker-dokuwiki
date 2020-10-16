@@ -21,7 +21,7 @@ with some improvements:
     Change the value to your needs in the file upload.ini
   * Fix the templates: create a new symlink to /var/www/lib/tpl  THX to https://github.com/mavx14/
   * Add a periodic backup of plugins in the folder "/var/dokuwiki-backup" for easy going back if you change plugins
-  * !Important pleas don use Backups of plugins during the upgrade from greebo to hogfather, please Install you plugins insiede of Dokuwiki manually!
+  * !Important, **don't use Backups of plugins during the upgrade from greebo to hogfather**, install you plugins inside of Dokuwiki manually!
   * Fix upload bug (permission /var/tmp/nginx)
   * Fix the client intended to send too large body nginx error
   * Add new php7-packages: php7-json (needed for the new release) php7-iconv (needed for the Tagcloud plugin)
@@ -83,7 +83,7 @@ docker cp dokuwiki-backup dokuwiki:/var/dokuwiki-backup/
 #exec a shell from the container to restor the files
 docker exec -ti dokuwiki /bin/sh
 cd /
-#restor the site-data
+#restore the site-data
 tar xzvf /var/dokuwiki-backup/dokuwiki_backup/Wednesday.tgz  ## Enter the proper Day of Week
 #restore the plugins dont forget to update Plugins via dokuwiki admin panel (after a release Upgrade)
 tar xzvf /var/dokuwiki-backup/dokuwiki-backup/plugins_Wednesday.tgz  ## Enter the proper Day of Week
