@@ -1,0 +1,12 @@
+#!/bin/sh
+ 
+backup_files="/var/www/lib/plugins"
+ 
+dest="/var/dokuwiki-backup"
+ 
+day=$(date +%A)
+
+archive_file="plugins_$day.tgz"
+ 
+tar czf $dest/$archive_file $backup_files
+
