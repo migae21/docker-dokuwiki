@@ -1,4 +1,4 @@
-# docker-dokuwiki Release 2020-07-29 "Hogfather"
+# docker-dokuwiki Release 2022-07-31a "Igor"
 
 A doker image providing dokuwiki with focus of backup in the container,  
 
