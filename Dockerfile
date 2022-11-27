@@ -1,14 +1,14 @@
-FROM alpine:3.12
+FROM alpine:3.16.2
 LABEL maintainer mig@aon.at
 
-ENV DOKUWIKI_VERSION 2020-07-29 
-ENV MD5_CHECKSUM 8867b6a5d71ecb5203402fe5e8fa18c9
+ENV DOKUWIKI_VERSION 2022-07-31a 
+ENV MD5_CHECKSUM 4459ea99e3a4ce2b767482f505724dcc
 ENV TIMEZONE Europe/Vienna
 
-RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.12/main/ add \
-libressl tzdata libcrypto1.1 libssl1.1 && \
-apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.12/community/ add \
-php7 php7-fpm php7-gd php7-session php7-zlib php7-openssl php7-xml php7-json php7-iconv nginx supervisor curl tar 
+RUN apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.16/main/ add \
+libssl3 tzdata libcrypto1.1 libcrypto3 libssl1.1 && \
+apk --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/v3.1666666/community/ add \
+libressl php8 php8-fpm php8-gd php8-session php8-zlib php8-openssl php8-sqlite3 php8-pdo_sqlite  php8-xml php8-json php8-iconv nginx supervisor curl tar 
 
 RUN mkdir -p /run/nginx && \
 mkdir -p /var/www /var/dokuwiki-storage/data && \
@@ -41,14 +41,14 @@ ADD supervisord.conf /etc/supervisord.conf
 ADD start.sh /start.sh
 ADD backup /etc/periodic/daily/backup
 ADD backup-plugins /etc/periodic/daily/backup-plugins
-ADD uploads.ini /etc/php7/conf.d/uploads.ini
+ADD uploads.ini /etc/php8/conf.d/uploads.ini
 
-RUN echo "cgi.fix_pathinfo = 0;" >> /etc/php7/php-fpm.ini && \
-sed -i -e "s|;daemonize\s*=\s*yes|daemonize = no|g" /etc/php7/php-fpm.conf && \
-sed -i -e "s|listen\s*=\s*127\.0\.0\.1:9000|listen = /var/run/php-fpm7.sock|g" /etc/php7/php-fpm.d/www.conf && \
-sed -i -e "s|;listen\.owner\s*=\s*|listen.owner = |g" /etc/php7/php-fpm.d/www.conf && \
-sed -i -e "s|;listen\.group\s*=\s*|listen.group = |g" /etc/php7/php-fpm.d/www.conf && \
-sed -i -e "s|;listen\.mode\s*=\s*|listen.mode = |g" /etc/php7/php-fpm.d/www.conf && \
+RUN echo "cgi.fix_pathinfo = 0;" >> /etc/php8/php-fpm.ini && \
+sed -i -e "s|;daemonize\s*=\s*yes|daemonize = no|g" /etc/php8/php-fpm.conf && \
+sed -i -e "s|listen\s*=\s*127\.0\.0\.1:9000|listen = /var/run/php-fpm8.sock|g" /etc/php8/php-fpm.d/www.conf && \
+sed -i -e "s|;listen\.owner\s*=\s*|listen.owner = |g" /etc/php8/php-fpm.d/www.conf && \
+sed -i -e "s|;listen\.group\s*=\s*|listen.group = |g" /etc/php8/php-fpm.d/www.conf && \
+sed -i -e "s|;listen\.mode\s*=\s*|listen.mode = |g" /etc/php8/php-fpm.d/www.conf && \
 cp /usr/share/zoneinfo/$TIMEZONE /etc/localtime && \
 chmod +x /start.sh && \
 chmod +x /etc/periodic/daily/backup && \
