@@ -1,4 +1,4 @@
-# docker-dokuwiki Release 2022-07-31a "Igor"
+# docker-dokuwiki Release 2023-04-04 “Jack Jackrum”
 
 A doker image providing dokuwiki with focus of backup in the container,  
 
@@ -9,22 +9,22 @@ also look at http://fast.jumpingcrab.com/wp/blog/2017/02/06/docker-eine-praktisc
 
 with some improvements:
   * It will check the md5sum of the dokuwiki download.
-  * It adds php8-openssl and his dependencies to ssl-download plugins within the image 
+  * It adds php82-openssl and his dependencies to ssl-download plugins within the image 
   * It creates a volume "lib/plugins" for easy add|remove|backup plugins
   * It creates a volume "var/dokuwiki-backup" witch contains a week of daily Backups per cron
   * Adding timezone support \
     Change the ENV TIMEZONE=Europe/Vienna in the Dockerfile to your needs
   * Adding ntpd support via supervisor
-  * Upgrade to the latest (Bugfix) Release 2022-07-31a “Igor”
-  * Upgrade Alpine Linux to latest stable version v3.16
+  * Upgrade to the latest (Bugfix) Release 2023-04-04 “Jack Jackrum”
+  * Upgrade Alpine Linux to latest stable version v3.18
   * (NEW) php upload limit set to 64MB \
     Change the value to your needs in the file upload.ini
   * Fix the templates: create a new symlink to /var/www/lib/tpl  THX to https://github.com/mavx14/
   * Add a periodic backup of plugins in the folder "/var/dokuwiki-backup" for easy going back if you change plugins
-  * !Important, **don't use Backups of plugins during the upgrade from greebo to hogfather**, install you plugins inside of Dokuwiki manually!
+  * !Important, **don't use Backups of plugins during the upgrade from greebo to hogfather or Jack Jackrum**, install you plugins inside of Dokuwiki manually!
   * Fix upload bug (permission /var/tmp/nginx)
   * Fix the client intended to send too large body nginx error
-  * Add new php7-packages: php8-json (needed for the new release) php8-iconv (needed for the Tagcloud plugin)
+  * Add new php7-packages: php7-json (needed for the new release) php7-iconv (needed for the Tagcloud plugin)
   * Fix startup of ntpd and crond via supervisor, added autorestart optoins to all services
  
 ##Download the Image und run the Container directly from Docker Hub or Cloud
